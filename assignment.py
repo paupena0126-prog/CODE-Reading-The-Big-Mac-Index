@@ -24,7 +24,7 @@ def get_the_cheapest_big_mac_price_by_year(year):
     cheapest = filtered.loc[filtered['dollar_price'].idxmin()]
     country = cheapest['name']
     code = cheapest['iso_a3']
-    price = cheapest['dollar_price']
+    price = round(float(cheapest['dollar_price']), 2)
     return f"{country}({code}): ${price}"
 
 
@@ -34,7 +34,7 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     expensive = filtered.loc[filtered['dollar_price'].idxmax()]
     country = expensive['name']
     code = expensive['iso_a3']
-    price = expensive['dollar_price']
+    price = round(float(expensive['dollar_price']), 2)
     return f"{country}({code}): ${price}"
 
 
